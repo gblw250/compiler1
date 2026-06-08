@@ -109,8 +109,8 @@ class CompilerGUI:
                 token_out.append(f"({code}, {val})")
             self.token_text.insert('1.0', "\n".join(token_out))
 
-
-            tokens = lexer.get_all_tokens()
+            lexer2 = Lexer(source)
+            tokens = lexer2.get_all_tokens()
             parser = Parser(tokens)
             ast_root = parser.parse_program()
             if ast_root:
